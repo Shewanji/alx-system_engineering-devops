@@ -17,8 +17,8 @@ frontend  marrion_frontend
         default_backend marrion_backend
 backend marrion_backend
         balance roundrobin
-        server 176572-web-01 18.209.178.16 check
-        server 176572-web-02 54.173.85.21 check
+        server 176572-web-01 18.209.178.16:80 check
+        server 176572-web-02 54.173.85.21:80 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
