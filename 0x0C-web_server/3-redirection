@@ -5,10 +5,11 @@
 sudo apt-get update
 sudo apt-get install -y nginx
 
-echo "Hello World!" > /var/www/html/index.html
+echo "Hello World!" | sudo tee /var/www/html/index.html
 
-link="https://www.youtube.com/watch?v=QH2-TGUlwu4"
-new_conf="server_name _;\n\trewrite ^/redirect_me/$ $link permanent
+link="https://www.youtube.com/watch?v=mC-zw0zCCtg"
+new_conf="server_name _;\n\trewrite ^/redirect_me/$ $link permanent;"
 
-sed -i "s|server_name\ _;|$new_conf|" /etc/nginx/sites-available/default
-service nginx restart
+sudo sed -i "s#server_name _;#$new_conf#" /etc/nginx/sites-enabled/default
+
+sudo service nginx restart
