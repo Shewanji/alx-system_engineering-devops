@@ -37,7 +37,7 @@ def get_employee_todo_progress(employee_id):
           f"({completed_tasks}/{total_tasks}):")
     for task in todo_data:
         if task.get('completed'):
-            print(f"\t{task.get('title')}")
+            print(f"\t {task.get('title')}")
 
 
 if __name__ == "__main__":
